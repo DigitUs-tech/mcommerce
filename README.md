@@ -27,11 +27,15 @@ allprojects {
 
 ### How it work
 
-- **1. Implement DigiCashPaymentListener**
+- **1. Add Internet permission to AndroidManifest.xml**
+```xml
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+```
+- **2. Implement DigiCashPaymentListener**
 ```java
 public class PayActivity extends Activity implements DigiCashPaymentListener
 ```
-- **2. init your payment builder and payment request**
+- **3. Init your payment builder and payment request**
 ```java
 myPaymentBuilder = PaymentBuilder.createWith(this, this)
                 .addMerchantName("Simple Store")
@@ -47,7 +51,7 @@ myPaymentBuilder = PaymentBuilder.createWith(this, this)
             e.printStackTrace();
         }
 ```
-- **3. Override onActivityResult**
+- **4. Override onActivityResult**
 ```java
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         ...
