@@ -54,7 +54,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         myPaymentBuilder.onPaymentResult(requestCode, resultCode, data);
         ...
     }
-    
+```
+```java
     ...
     
     public void onPaymentSuccessfullySend() {
